@@ -58,5 +58,7 @@ public class DetailActivity extends AppCompatActivity {
 
     private void populateUI() {
 
+        //TODO: DetailActivity shows all Sandwich details correctly
+
     }
 }
