@@ -76,23 +76,27 @@ public class DetailActivity extends AppCompatActivity {
         Toast.makeText(this, R.string.detail_error_message, Toast.LENGTH_SHORT).show();
     }
 
+    /**
+     * Populates UI for given object
+     * @param sandwich - data to be populated
+     */
     private void populateUI(Sandwich sandwich) {
 
         //DONE: DetailActivity shows all Sandwich details correctly
-        TextView also_known_tv = findViewById(R.id.also_known_tv);
+        TextView alsoKnownTv = findViewById(R.id.also_known_tv);
         final List<String> alsoKnownAs = sandwich.getAlsoKnownAs();
         if(alsoKnownAs !=null) {
-            also_known_tv.setText(TextUtils.join(", ", alsoKnownAs));
+            alsoKnownTv.setText(TextUtils.join(", ", alsoKnownAs));
         }
-        final TextView ingredients_tv = findViewById(R.id.ingredients_tv);
+        final TextView ingredientsTv = findViewById(R.id.ingredients_tv);
         final List<String> ingredients = sandwich.getIngredients();
         if(ingredients !=null){
-            ingredients_tv.setText(TextUtils.join(", ", ingredients));
+            ingredientsTv.setText(TextUtils.join(", ", ingredients));
         }
-        final TextView origin_tv = findViewById(R.id.origin_tv);
-        origin_tv.setText(sandwich.getPlaceOfOrigin());
+        final TextView originTv = findViewById(R.id.origin_tv);
+        originTv.setText(sandwich.getPlaceOfOrigin());
 
-        final TextView description_tv = findViewById(R.id.description_tv);
-        description_tv.setText(sandwich.getDescription());
+        final TextView descriptionTv = findViewById(R.id.description_tv);
+        descriptionTv.setText(sandwich.getDescription());
     }
 }
